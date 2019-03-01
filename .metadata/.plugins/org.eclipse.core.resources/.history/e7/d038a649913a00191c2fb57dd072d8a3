@@ -1,0 +1,7 @@
+CREATE DATABASE AHMADI;
+use AHMADI;
+
+CREATE TABLE  user (
+    login VARCHAR(100),
+    pass VARCHAR(100)
+)

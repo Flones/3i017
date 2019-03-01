@@ -1,0 +1,30 @@
+package Service;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class User {
+	public static JSONObject login(String login, String password) throws JSONException {
+		if (login==null || password==null)
+			return ServicesTools.ServiceRefused("Wrong argument", -1);
+		JSONObject retour=new JSONObject();
+		try {
+			if(!ServicesTools.checkUserExist(login))
+				return (ServicesTools.ServiceRefused("Unknown user", 1));
+			
+			if(!ServicesTools.checkUserPassword(login,password))
+				return (ServicesTools.ServiceRefused("bad password", 2));
+			int id_user=ServicesTools.getUserId(login);
+			String key=ServicesTools.InsertConnection(id_user,false);
+			
+			retour.put("status","OK");
+			retour.put("key", key);
+		}	
+			catch(JSONException e){
+				return(ServicesTools.ServiceRefused("Json pb"+e.getMessage(),100));
+			}
+		return retour;
+			
+	}
+
+}

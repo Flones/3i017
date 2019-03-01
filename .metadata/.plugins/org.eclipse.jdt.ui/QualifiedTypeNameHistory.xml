@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.servlet.ServletException"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoClient"/>
+<fullyQualifiedTypeName name="org.bson.Document"/>
+<fullyQualifiedTypeName name="com.mongodb.client.MongoCollection"/>
+<fullyQualifiedTypeName name="com.mongodb.client.MongoDatabase"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoURI"/>
+<fullyQualifiedTypeName name="com.mongodb.MongoClientURI"/>
+<fullyQualifiedTypeName name="BD.BDTools"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
+</qualifiedTypeNameHistroy>

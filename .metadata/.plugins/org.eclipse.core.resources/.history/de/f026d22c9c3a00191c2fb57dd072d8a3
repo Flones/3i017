@@ -1,0 +1,13 @@
+package Test;
+
+import org.json.JSONObject;
+
+public class TestLogout {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JSONObject json=Service.User.logout("123");
+		System.out.println(json);
+	}
+
+}

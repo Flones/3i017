@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/users/nfs/Etu2/3520042/3i017/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+161737662.index
+4204547865.index
+1883176065.index
+3045185674.index
+3044830597.index
+422878316.index

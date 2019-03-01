@@ -1,0 +1,13 @@
+package Test;
+
+import org.json.JSONObject;
+
+public class TestAddFriend {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JSONObject json=Service.Relation.addFriend("cle", 1);
+		System.out.println(json);
+	}
+
+}
