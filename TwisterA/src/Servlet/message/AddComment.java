@@ -13,15 +13,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Servlet implementation class AddMessage
+ * Servlet implementation class AddComment
  */
-@WebServlet("/AddMessage")
-public class AddMessage extends HttpServlet {
+@WebServlet("/AddComment")
+public class AddComment extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 			
@@ -29,32 +26,14 @@ public class AddMessage extends HttpServlet {
 			String key=request.getParameter("key");
 			String m=request.getParameter("message");
 			try {
-				JSONObject retour=Service.Message.addMessage(key,m);
+				JSONObject retour=Service.Message.addComment(key,m);
 				PrintWriter out = response.getWriter ();
 				out.printf(retour.toString());
-				//?m=abcd
+				//?key=1&m=abcd
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 	}
-	
-	/*protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType( " text / plain " );
-		String key=request.getParameter("key");
-		try {
-			JSONObject retour=Service.Message.removeMessage(key);
-			PrintWriter out = response.getWriter ();
-			out.printf(retour.toString());
-			//?id=abcd
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-	*/
-	
 }

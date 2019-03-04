@@ -22,8 +22,8 @@
     <servlet-class>Servlet.User.Logout</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>addMessage</servlet-name>
-    <servlet-class>Servlet.message.AddMessage</servlet-class>
+    <servlet-name>addComment</servlet-name>
+    <servlet-class>Servlet.message.AddComment</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>addFriend</servlet-name>
@@ -54,8 +54,8 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>addMessage</servlet-name>
-    <url-pattern>/addMessage</url-pattern>
+    <servlet-name>addComment</servlet-name>
+    <url-pattern>/addComment</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>addFriend</servlet-name>
