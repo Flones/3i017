@@ -1,5 +1,6 @@
 package Service;
 
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -17,12 +18,12 @@ import BD.BDTools;
 public class Message {
 	//a finir
 	
-	public static JSONObject addComment(String cle, String texte) throws JSONException {
+	public static JSONObject addComment(String cle, String texte) throws JSONException, SQLException {
 		if (cle==null||texte==null)
 			return ServicesTools.ServiceRefused("Wrong argument", -1);
 		JSONObject retour=new JSONObject();
 		MongoClient mongo = MongoClients.create("mongodb://localhost:27017");
-		MongoDatabase db = mongo.getDatabase(my_db);
+		MongoDatabase db = mongo.getDatabase("test");
 		MongoCollection<Document> col = db.getCollection("Messages");
 		Document d = new Document();
 		GregorianCalendar calendar = new java.util.GregorianCalendar();
@@ -39,12 +40,12 @@ public class Message {
 	}
 	
 	
-	public static JSONObject addMessage(String cle, String texte) throws JSONException {
+	public static JSONObject addMessage(String cle, String texte) throws JSONException, SQLException {
 		if (cle==null||texte==null)
 			return ServicesTools.ServiceRefused("Wrong argument", -1);
 		JSONObject retour=new JSONObject();
 		MongoClient mongo = MongoClients.create("mongodb://localhost:27017");
-		MongoDatabase db = mongo.getDatabase(my_db);
+		MongoDatabase db = mongo.getDatabase("test");
 		MongoCollection<Document> col = db.getCollection("Messages");
 		Document d = new Document();
 		GregorianCalendar calendar = new java.util.GregorianCalendar();
@@ -59,12 +60,13 @@ public class Message {
 		return retour;
 			
 	}
+		
 	public static JSONObject search(String key, String m) throws JSONException {
 		if (key==null)
 			return ServicesTools.ServiceRefused("Wrong argument", -1);
 		JSONObject retour=new JSONObject();
 		BD.BDTools.searchMessage(m);
-		retour.put("message","trouv�");
+		retour.put("message","trouve");
 		return retour;
 	}
 }
